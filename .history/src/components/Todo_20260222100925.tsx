@@ -26,7 +26,7 @@ export default function Todo() {
   return (
     <main>
       <h1>Todo</h1>
-      {loading() ? <p>Loading...</p> : todos().length === 0 ? 
+   loading () :  { todos().length === 0 ?
         <p>No todos available</p> :
         <For each={todos()}>
             {(todo) => <li>{todo.title}</li>}       
