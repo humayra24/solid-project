@@ -14,7 +14,7 @@ export default function Todo() {
   
   async function fetchTodo() {
         const res = await fetch("https://jsonplaceholder.typicode.com/todos");
-        // console.log(res);
+        console.log(res);
         const data = await res.json();
         setTodos(data);
     }

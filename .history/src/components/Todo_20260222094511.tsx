@@ -1,5 +1,4 @@
 import { createSignal } from "solid-js";
-import { For } from "solid-js/web";
 
 type Todo = {
   userId: number;
@@ -14,16 +13,16 @@ export default function Todo() {
   
   async function fetchTodo() {
         const res = await fetch("https://jsonplaceholder.typicode.com/todos");
-        // console.log(res);
         const data = await res.json();
-        setTodos(data);
+        setTodos([data]);
     }
     
   return (
     <main>
       <h1>Todo</h1>
       <For each={todos()}>
-        {(todo) => <li>{todo.title}</li>}       
+        {(todo) }
+        
       </For>
       <button onClick={() => fetchTodo()}>Fetch ToDo</button>     
     </main>
