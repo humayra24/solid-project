@@ -25,8 +25,8 @@ export default function Todo() {
       { todos().length === 0 ?
         <p>No todos available</p> :
         <For each={todos()}>
-            {(todo) => <li>{todo.title}</li>}       
-        </For>
+        {(todo) => <li>{todo.title}</li>}       
+      </For>
       }
       <button onClick={() => fetchTodo()}>Fetch ToDo</button>     
     </main>

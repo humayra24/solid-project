@@ -22,12 +22,10 @@ export default function Todo() {
   return (
     <main>
       <h1>Todo</h1>
-      { todos().length === 0 ?
-        <p>No todos available</p> :
-        <For each={todos()}>
-            {(todo) => <li>{todo.title}</li>}       
-        </For>
-      }
+      
+      <For each={todos()}>
+        {(todo) => <li>{todo.title}</li>}       
+      </For>
       <button onClick={() => fetchTodo()}>Fetch ToDo</button>     
     </main>
   );
