@@ -50,9 +50,7 @@ export default function User() {
                     <p>Website: {user()?.website}</p>
                 </div> : <p>No user data available</p>}
             <input 
-                type="number"  
-                value={userId()}
-                onInput={(e) => setUserId(Number(e.currentTarget.value))}
+            type="text"  name="userid" id="userid" 
             />
             <button onClick={() => fetchUser()}>Fetch User</button>           
         </main>

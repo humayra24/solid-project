@@ -32,7 +32,7 @@ export default function User() {
     
     async function fetchUser() {
         setLoading(true);
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate delay
+        await new Promise(resolve => setTimeout(resolve, 5000)); // Simulate delay
         const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userId()}`);
         const data = await res.json();
         setUser(data); 
@@ -49,11 +49,7 @@ export default function User() {
                     <p>Phone: {user()?.phone}</p>
                     <p>Website: {user()?.website}</p>
                 </div> : <p>No user data available</p>}
-            <input 
-                type="number"  
-                value={userId()}
-                onInput={(e) => setUserId(Number(e.currentTarget.value))}
-            />
+            <input type="text" name="userid" id="userid" />
             <button onClick={() => fetchUser()}>Fetch User</button>           
         </main>
     );

@@ -50,7 +50,7 @@ export default function User() {
                     <p>Website: {user()?.website}</p>
                 </div> : <p>No user data available</p>}
             <input 
-                type="number"  
+                type="text"  
                 value={userId()}
                 onInput={(e) => setUserId(Number(e.currentTarget.value))}
             />
