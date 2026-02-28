@@ -1,3 +1,0 @@
-export defaukt fuction User() {
-    
-}
