@@ -1,5 +1,6 @@
 import { createSignal } from "solid-js";
 import "./Form.css";
+import { For } from "solid-js";
 
 type FormData = {
     name: string;
@@ -76,8 +77,8 @@ export default function Form(){
 
                 <fieldset class="form__fieldset">
                     <div class="form__radio-group">
-                        {
-                            genders.map(gender => (
+                        <For each={genders}>
+                            {(gender) => (
                                 <label class="form__radio-label">
                                     <input 
                                         type="radio" 
@@ -89,8 +90,8 @@ export default function Form(){
                                     />
                                     <span class="form__radio-text">{gender}</span>
                                 </label>
-                            ))
-                        }
+                            )}
+                        </For>
                     </div>
                 </fieldset>
 
