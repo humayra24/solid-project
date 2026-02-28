@@ -1,0 +1,155 @@
+
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background:
+    radial-gradient(1200px 700px at 20% 10%, rgba(99,102,241,.22), transparent 55%),
+    radial-gradient(900px 600px at 90% 30%, rgba(56,189,248,.15), transparent 60%),
+    var(--bg);
+}
+
+/* ---------- Layout container ---------- */
+main{
+  max-width: 560px;
+  margin: 56px auto;
+  padding: 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: var(--gap);
+}
+
+/* Optional heading if you add one */
+main h1{
+  margin: 0 0 6px;
+  font-size: 22px;
+  letter-spacing: .2px;
+}
+main p.helper{
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---------- Inputs ---------- */
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(15,23,42,.6);
+  color: var(--text);
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease, transform .05s ease;
+}
+
+input::placeholder{
+  color: rgba(154,166,192,.75);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus{
+  border-color: rgba(99,102,241,.65);
+  box-shadow: 0 0 0 4px var(--focus);
+}
+
+/* ---------- Gender radios (make each row look like a pill) ---------- */
+main > div{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(15,23,42,.35);
+  transition: border-color .15s ease, background .15s ease;
+}
+
+main > div:hover{
+  border-color: var(--border-2);
+  background: rgba(15,23,42,.45);
+}
+
+input[type="radio"]{
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+main > div label{
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* ---------- Checkbox row ---------- */
+input[type="checkbox"]{
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+main > label{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Your checkbox + label are separate siblings in your JSX.
+   This makes them align nicely as a row. */
+main input[type="checkbox"]{
+  justify-self: start;
+}
+main input[type="checkbox"] + label{
+  margin-top: -40px;         /* aligns with checkbox */
+  margin-left: 32px;         /* space after checkbox */
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---------- Submit button ---------- */
+input[type="button"]{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(99,102,241,.55);
+  background: linear-gradient(180deg, rgba(99,102,241,1), rgba(79,70,229,1));
+  color: white;
+  font-weight: 650;
+  letter-spacing: .2px;
+  cursor: pointer;
+  transition: transform .06s ease, filter .15s ease, box-shadow .15s ease;
+  box-shadow: 0 12px 30px rgba(99,102,241,.25);
+}
+
+input[type="button"]:hover{
+  filter: brightness(1.05);
+  box-shadow: 0 16px 38px rgba(99,102,241,.30);
+}
+
+input[type="button"]:active{
+  transform: translateY(1px);
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 640px){
+  main{
+    margin: 24px 14px;
+    padding: 18px;
+  }
+}
