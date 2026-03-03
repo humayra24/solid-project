@@ -16,6 +16,7 @@ export default function App() {
           <a href="/user">User</a>
           <a href="/settings">Settings</a>
           <a href="/form">Form</a>
+          <a href="/playground">Playground</a>
           <Suspense>{props.children}</Suspense>
         </MetaProvider>
       )}
