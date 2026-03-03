@@ -1,4 +1,5 @@
 import { createSignal, createMemo, createEffect } from "solid-js";
+import UserProfile from "./UserProfile";
 
 export default function Playground() {
     const [firstName, setFirstName] = createSignal("");
@@ -22,6 +23,7 @@ export default function Playground() {
             <input type="text" name="firstName" value={firstName()} onInput={(e) => setFirstName(e.target.value)} placeholder="Enter first name" /> <br />
             <input type="text" name="lastName" value={lastName()} onInput={(e) => setLastName(e.target.value)} placeholder="Enter last name" />
             <p>Full Name: {fullName()}</p>
+            <UserProfile />
         </main>
     );
 }
