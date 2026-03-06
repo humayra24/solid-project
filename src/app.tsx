@@ -4,7 +4,10 @@ import { FileRoutes } from "@solidjs/start/router";
 import { createContext, createSignal, Suspense } from "solid-js";
 import "./app.css";
 
-export const UserContext = createContext();
+export const UserContext = createContext<{ name: string; email: string }>({
+  name: "",
+  email: ""
+});
     
 export default function App() {
   const [user, setUser] = createSignal({
